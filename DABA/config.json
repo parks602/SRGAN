@@ -1,0 +1,35 @@
+{
+   "type"     : "test",
+   "common"   : {
+                "upscale_factor"     : 10,
+                "model_path"         : "/data/home/rndkoa/2021/SRGAN/DAIN/"
+                
+   },
+   "train"    : {
+               "model_name"          : "trn_shrt_grd_gdps_srgn_%s_%ss_%sutc.%s-%s.pth",
+               "epoch"               : 1000,
+               "ydata_dir"           : "/data/home/rndkoa/2021/LDAPS/DAOU",
+               "ydata_name"          : "DFS_SHRT_STD_ANL_1KM_%s.%s",
+               "batch_size"          : 2,
+               "patience"            : 200
+               },
+   "test"    : {
+               "model_name"         : "trn_shrt_grd_gdps_srgn_%s_%ss_%sutc.%s-%s.pth",
+               "model_sdate"        : "20180607",
+               "model_edate"        : "20210425",                                                          
+               "batch_size"         : 1,
+               "output_dir"         : "/data/home/rndkoa/2021/SRGAN/DAOU/"
+
+               },
+
+   "input"   : {
+               "xdata_dir"          : "/DFSDISK/ARCH/NWPD/GDPS_N128/",
+               "xdata_name"         : "%s/%s/umgl_n128_pgg_093.%s.gb2",
+               "utcs"               : ["00", "12"],
+               "vars"               : ["T3H","REH"],
+               "sdate"              : "20210401",
+               "edate"              : "20210501",
+               "gis_dir"            : "/data/home/rndkoa/2021/SRGAN/DABA/output_elev_1KM_Mean_SRTM.npy",
+               "mask_dir"           : "/data/home/rndkoa/2021/SRGAN/DABA/noaa_lsm1km.npy"
+                }
+}
